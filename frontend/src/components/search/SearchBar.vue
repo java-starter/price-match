@@ -1,14 +1,19 @@
 <template>
-
-  <input type="text" class="url-input" placeholder="상품 주소 입력" v-model="url"
-         @keyup.enter="enterUrl">
-
+  <div>
+    <input type="text" class="url-input" placeholder="상품 주소 입력" v-model="url"
+           @keyup.enter="enterUrl">
+    
+    <Chart/>
+  </div>
 
 </template>
 
 <script>
+import Chart from "./Chart";
+
 export default {
   name: 'searchBar',
+  components: {Chart},
   data() {
     return {
       url: '',
